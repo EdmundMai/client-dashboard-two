@@ -14,9 +14,4 @@ describe('App: ClientDashboardTwo', () => {
       inject([ClientDashboardTwoAppComponent], (app: ClientDashboardTwoAppComponent) => {
     expect(app).toBeTruthy();
   }));
-
-  it('should have as title \'client-dashboard-two works!\'',
-      inject([ClientDashboardTwoAppComponent], (app: ClientDashboardTwoAppComponent) => {
-    expect(app.title).toEqual('client-dashboard-two works!');
-  }));
 });

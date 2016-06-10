@@ -1,0 +1,29 @@
+<table class="ctTable">
+  <tr>
+    <th>Engagements</th>
+    <th *ngFor="#account of accounts">{{ account.name }}</th>
+    <th>Totals</th>
+  </tr>
+</table>
+<table class="ctTable">
+  <tbody *ngFor="#group of transformedFianceData">
+    <tr class="highlight">
+      <td>
+        <span class="toggleChildRows" (click)="toggleChildRows(group)">
+          <i class="fa fa-caret-right"></i>
+        </span>
+        {{ group[0] }}
+      </td>
+      <td *ngFor="#groupCount of group[1]">
+        {{ groupCount }}
+      </td>
+    </tr>
+    <tr *ngFor="#subgroup of group; let i = index"
+      *ngIf="i > 1"
+      [hidden]="!group.areChildRowsShown">
+      <td *ngFor="#nameOrStat of subgroup">
+        {{ nameOrStat }}
+      </td>
+    </tr>
+  </tbody>
+</table>

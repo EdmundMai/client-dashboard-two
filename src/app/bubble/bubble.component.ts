@@ -12,8 +12,6 @@ export class BubbleComponent implements OnInit {
   @Input() metricLongName: string;
   @Input() metricShortName: string;
 
-  constructor() {}
-
   ngOnInit() {
   }
 

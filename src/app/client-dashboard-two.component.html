@@ -15,55 +15,17 @@
         [metricLongName]="'Potential Impressions'"
         [metricShortName]="'Impressions'"
         ></bubble>
-      <div class="bubbleWrapper">
-        <div class="bubble--riv">
-          <div class="bubble">
-            {{ fianceData.riv }}X
-          </div>
-        </div>
-        <label>
-          Return In<br> Value
-          <span class="secondary" (click)="openModal('riv')"><i class="fa fa-external-link"></i></span>
-          <ct-dialog class="rivModal">
-            RIV
-            {{ fianceData.riv }}
-          </ct-dialog>
-        </label>
-      </div>
+      <bubble
+        [actual]="fianceData.riv"
+        [metricLongName]="'Return In Value'"
+        [metricShortName]="'RIV'"
+        ></bubble>
       <div class="editStats">
         <ct-button type="subtle">edit stats</ct-button>
       </div>
       <div>
         <h3>Your activity at a glance</h3>
-        <table class="ctTable">
-          <tr>
-            <th>Engagements</th>
-            <th *ngFor="#account of accounts">{{ account.name }}</th>
-            <th>Totals</th>
-          </tr>
-        </table>
-        <table class="ctTable">
-          <tbody *ngFor="#group of transformedFianceData">
-            <tr class="highlight">
-              <td>
-                <span class="toggleChildRows" (click)="toggleChildRows(group)">
-                  <i class="fa fa-caret-right"></i>
-                </span>
-                {{ group[0] }}
-              </td>
-              <td *ngFor="#groupCount of group[1]">
-                {{ groupCount }}
-              </td>
-            </tr>
-            <tr *ngFor="#subgroup of group; let i = index"
-              *ngIf="i > 1"
-              [hidden]="!group.areChildRowsShown">
-              <td *ngFor="#nameOrStat of subgroup">
-                {{ nameOrStat }}
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <engagement-table></engagement-table>
       </div>
     </div>
   </div>

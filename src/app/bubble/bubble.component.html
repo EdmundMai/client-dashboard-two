@@ -1,10 +1,10 @@
 <div class="bubbleWrapper">
-  <div class="bubble--engagements">
+  <div class="'bubble--{{ metricShortName.toLowerCase() }}">
     <div class="bubble bubble--hoverable">
       <div class="bubble-content">
         {{ actual }}
       </div>
-      <div class="bubble-overlay">
+      <div class="bubble-overlay" *ngIf="!!forecast">
         {{ forecast }}
         <div>Forecast</div>
       </div>
@@ -12,8 +12,8 @@
   </div>
   <label>
     {{ metricLongName }}
-    <span class="secondary" (click)="openModal('engagements')"><i class="fa fa-external-link"></i></span>
-    <ct-dialog class="engagementsModal">
+    <span class="secondary" (click)="openModal(metricShortName)"><i class="fa fa-external-link"></i></span>
+    <ct-dialog class="{{ metricShortName.toLowerCase() }}Modal">
       {{ metricShortName }}
       {{ actual }}
       {{ forecast }} Forecast

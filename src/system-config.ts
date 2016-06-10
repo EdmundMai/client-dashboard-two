@@ -31,6 +31,7 @@ const barrels: string[] = [
   'app/shared',
   'app/ugc-banner',
   'app/bubble',
+  'app/engagement-table',
   /** @cli-barrel */
 ];
 

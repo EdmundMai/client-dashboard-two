@@ -1,0 +1,22 @@
+<div class="bubbleWrapper">
+  <div class="bubble--engagements">
+    <div class="bubble bubble--hoverable">
+      <div class="bubble-content">
+        {{ actual }}
+      </div>
+      <div class="bubble-overlay">
+        {{ forecast }}
+        <div>Forecast</div>
+      </div>
+    </div>
+  </div>
+  <label>
+    {{ metricLongName }}
+    <span class="secondary" (click)="openModal('engagements')"><i class="fa fa-external-link"></i></span>
+    <ct-dialog class="engagementsModal">
+      {{ metricShortName }}
+      {{ actual }}
+      {{ forecast }} Forecast
+    </ct-dialog>
+  </label>
+</div>

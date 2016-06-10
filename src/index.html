@@ -10,6 +10,7 @@
   {{/unless}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="http://carbon.ec2.crowdtap.com/component_importer.js"></script>
 </head>
 <body>
   <client-dashboard-two-app>Loading...</client-dashboard-two-app>
@@ -25,7 +26,8 @@
 
   
 
-
-
 </body>
+<script>
+  window.carbon.importComponents({ components: ['ct-button', 'ct-button/ct-button-link', 'ct-dialog', 'ct-progress'] });
+</script>
 </html>

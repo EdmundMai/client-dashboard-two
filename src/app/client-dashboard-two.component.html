@@ -1,3 +1,113 @@
-<h1>
-  {{title}}
-</h1>
+<div id="manage-brands-show" class="manage-brands-show">
+  <div class="brandBanner">
+    <div class="ugcPhoto"
+      [ngStyle]="{ 'background-image': 'url(' + ugc[0].photo_link + ')'}">
+      <div class="ugcPhoto-brandInfo">
+        <h1>{{ brand.name }} Dashboard</h1>
+        <ct-button>view your latest photos</ct-button>
+      </div>
+      <p class="ugcPhoto-caption">
+        Photo by {{ brand.name }} Tapper <strong>{{ ugc[0].full_name }}</strong> ({{ ugc[0].state }})
+      </p>
+    </div>
+  </div>
+  <div class="brandBody">
+    <h1>Your Crowd has been busy!</h1>
+    <div class="dataBubbles">
+      <div class="bubbleWrapper">
+        <div class="bubble--engagements">
+          <div class="bubble bubble--hoverable">
+            <div class="bubble-content">
+              {{ fianceData.engagements_count }}
+            </div>
+            <div class="bubble-overlay">
+              {{ fianceData.engagements_forecast }}
+              <div>Forecast</div>
+            </div>
+          </div>
+        </div>
+        <label>
+          Engagements
+          <span class="secondary" (click)="openModal('engagements')"><i class="fa fa-external-link"></i></span>
+          <ct-dialog class="engagementsModal">
+            Engagements
+            {{ fianceData.engagements_count }}
+            {{ fianceData.engagements_forecast }} Forecast
+          </ct-dialog>
+        </label>
+      </div>
+    </div>
+    <div class="bubbleWrapper">
+      <div class="bubble--impressions">
+        <div class="bubble bubble--hoverable">
+          <div class="bubble-content">
+            {{ fianceData.potential_imps_count }}
+          </div>
+          <div class="bubble-overlay">
+            {{ fianceData.potential_imps_forecast }}
+            <div>Forecast</div>
+          </div>
+        </div>
+      </div>
+      <label>
+        Potential<br> Impressions
+        <span class="secondary" (click)="openModal('impressions')"><i class="fa fa-external-link"></i></span>
+        <ct-dialog class="impressionsModal">
+          Impressions
+          {{ fianceData.potential_imps_count }}
+          {{ fianceData.potential_imps_forecast }}
+        </ct-dialog>
+      </label>
+      <div class="bubbleWrapper">
+        <div class="bubble--riv">
+          <div class="bubble">
+            {{ fianceData.riv }}X
+          </div>
+        </div>
+        <label>
+          Return In<br> Value
+          <span class="secondary" (click)="openModal('riv')"><i class="fa fa-external-link"></i></span>
+          <ct-dialog class="rivModal">
+            RIV
+            {{ fianceData.riv }}
+          </ct-dialog>
+        </label>
+      </div>
+      <div class="editStats">
+        <ct-button type="subtle">edit stats</ct-button>
+      </div>
+      <div>
+        <h3>Your activity at a glance</h3>
+        <table class="ctTable">
+          <tr>
+            <th>Engagements</th>
+            <th *ngFor="#account of accounts">{{ account.name }}</th>
+            <th>Totals</th>
+          </tr>
+        </table>
+        <table class="ctTable">
+          <tbody *ngFor="#group of transformedFianceData">
+            <tr class="highlight">
+              <td>
+                <span class="toggleChildRows" (click)="toggleChildRows(group)">
+                  <i class="fa fa-caret-right"></i>
+                </span>
+                {{ group[0] }}
+              </td>
+              <td *ngFor="#groupCount of group[1]">
+                {{ groupCount }}
+              </td>
+            </tr>
+            <tr *ngFor="#subgroup of group; let i = index"
+              *ngIf="i > 1"
+              [hidden]="!group.areChildRowsShown">
+              <td *ngFor="#nameOrStat of subgroup">
+                {{ nameOrStat }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

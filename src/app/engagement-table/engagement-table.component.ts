@@ -15,10 +15,10 @@ export class EngagementTableComponent implements OnInit {
   ];
   public accounts: Object[];
 
-  private accountService: AccountService;
+  constructor(private _accountService: AccountService) {}
 
   ngOnInit() {
-    this.accountService.all().then(accounts => console.log(accounts));
+    this._accountService.all().then(accounts => this.accounts = accounts);
   }
 
 }

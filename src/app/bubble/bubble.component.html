@@ -2,10 +2,10 @@
   <div class="'bubble--{{ metricShortName.toLowerCase() }}">
     <div class="bubble bubble--hoverable">
       <div class="bubble-content">
-        {{ actual }}
+        {{ actual | shortenedNumber }}
       </div>
       <div class="bubble-overlay" *ngIf="!!forecast">
-        {{ forecast }}
+        {{ forecast | shortenedNumber }}
         <div>Forecast</div>
       </div>
     </div>
@@ -15,8 +15,8 @@
     <span class="secondary" (click)="openModal(metricShortName)"><i class="fa fa-external-link"></i></span>
     <ct-dialog class="{{ metricShortName.toLowerCase() }}Modal">
       {{ metricShortName }}
-      {{ actual }}
-      {{ forecast }} Forecast
+      {{ actual | shortenedNumber }}
+      {{ forecast | shortenedNumber }} Forecast
     </ct-dialog>
   </label>
 </div>

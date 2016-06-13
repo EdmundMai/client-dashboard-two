@@ -132,47 +132,47 @@
 
 /* ctTable Styles (temp) */
 table.ctTable {
-  background-color: var(--primary-background-color);
+  background-color: white;
   border-collapse: collapse;
   border-radius: 4px;
-  font-weight: var(--fontWeight-base);
-  font-size: var(--fontSize-base);
+  font-weight: 400;
+  font-size: 16px;
   width: 100%;
 }
 
 .ctTable tr {
-  border-bottom: 1px solid var(--divider-color);
+  border-bottom: 1px solid #e8ebed;
 }
 
 .ctTable tr {
-  background-color: var(--tertiary-background-color);
+  background-color: #fafcfc;
 }
 
 .ctTable tr.highlight {
-  font-weight: var(--fontWeight-bold);
-  background-color: var(--primary-background-color);
+  font-weight: 600;
+  background-color: white;
 }
 
 .ctTable th {
-  background-color: var(--primary-background-color);
-  font-size: var(--fontSize-medium);
-  font-weight: var(--fontWeight-bold);
+  background-color: white;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .ctTable th,
 .ctTable td {
-  color: var(--primary-text-color);
+  color: #212629;
   padding: 10px 20px;
 }
 
 .ctTable th.secondary,
 .ctTable td.secondary {
-  color: var(--secondary-text-color);
+  color: #8c929c;
 }
 
 .ctTable th.tertiary,
 .ctTable td.tertiary {
-  color: var(--tertiary-text-color);
+  color: #b1b7bd;
 }
 
 .ctTable th:first-of-type,

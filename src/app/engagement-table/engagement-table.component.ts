@@ -21,4 +21,11 @@ export class EngagementTableComponent implements OnInit {
     this._accountService.all().then(accounts => this.accounts = accounts);
   }
 
+  toggleChildRows = (group) => {
+    if (!group.areChildRowsShown) {
+      group.areChildRowsShown = true;
+    } else {
+      group.areChildRowsShown = !group.areChildRowsShown;
+    }
+  }
 }

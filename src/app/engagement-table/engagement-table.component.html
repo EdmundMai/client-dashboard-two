@@ -18,8 +18,7 @@
         {{ groupCount }}
       </td>
     </tr>
-    <tr *ngFor="let subgroup of group; let i = index"
-      *ngIf="i > 1"
+    <tr *ngFor="let subgroup of group.slice(2)"
       [hidden]="!group.areChildRowsShown">
       <td *ngFor="let nameOrStat of subgroup">
         {{ nameOrStat }}

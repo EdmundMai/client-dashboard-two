@@ -37,7 +37,7 @@ describe('Component: Bubble', () => {
 @Component({
   selector: 'test',
   template: `
-    <app-bubble></app-bubble>
+    <bubble></bubble>
   `,
   directives: [BubbleComponent]
 })

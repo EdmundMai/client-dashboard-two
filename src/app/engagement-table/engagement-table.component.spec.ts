@@ -10,11 +10,12 @@ import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testin
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { EngagementTableComponent } from './engagement-table.component';
+import { AccountService } from '../account.service';
 
 describe('Component: EngagementTable', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [EngagementTableComponent]);
+  beforeEachProviders(() => [EngagementTableComponent, AccountService]);
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder) {
     builder = tcb;
   }));
@@ -37,7 +38,7 @@ describe('Component: EngagementTable', () => {
 @Component({
   selector: 'test',
   template: `
-    <app-engagement-table></app-engagement-table>
+    <engagement-table></engagement-table>
   `,
   directives: [EngagementTableComponent]
 })

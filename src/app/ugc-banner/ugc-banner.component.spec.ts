@@ -37,7 +37,7 @@ describe('Component: UgcBanner', () => {
 @Component({
   selector: 'test',
   template: `
-    <app-ugc-banner></app-ugc-banner>
+    <ugc-banner></ugc-banner>
   `,
   directives: [UgcBannerComponent]
 })

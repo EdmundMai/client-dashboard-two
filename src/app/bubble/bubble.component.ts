@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BrowserDomAdapter } from '@angular/platform-browser/src/browser/browser_adapter'
 import { ShortenedNumber } from '../shortened-number.pipe';
 
 @Component({
@@ -6,7 +7,8 @@ import { ShortenedNumber } from '../shortened-number.pipe';
   selector: 'bubble',
   templateUrl: 'bubble.component.html',
   styleUrls: ['bubble.component.css'],
-  pipes: [ShortenedNumber]
+  pipes: [ShortenedNumber],
+  providers: [BrowserDomAdapter]
 })
 export class BubbleComponent implements OnInit {
   @Input() actual: number;
@@ -14,11 +16,14 @@ export class BubbleComponent implements OnInit {
   @Input() metricLongName: string;
   @Input() metricShortName: string;
 
+  constructor(private _dom: BrowserDomAdapter) {}
+
   ngOnInit() {
   }
 
   openModal(modalName) {
-    console.log("open modal");
+    let dialog = this._dom.query("ct-dialog." + this.metricShortName.toLowerCase() + "Modal");
+    dialog.showModal();
   }
 
 }

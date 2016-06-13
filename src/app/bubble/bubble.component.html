@@ -10,13 +10,12 @@
       </div>
     </div>
   </div>
-  <label>
+  <label (click)="openModal(metricShortName)">
     {{ metricLongName }}
-    <span class="secondary" (click)="openModal(metricShortName)"><i class="fa fa-external-link"></i></span>
-    <ct-dialog class="{{ metricShortName.toLowerCase() }}Modal">
-      {{ metricShortName }}
-      {{ actual | shortenedNumber }}
-      {{ forecast | shortenedNumber }} Forecast
-    </ct-dialog>
+    <span class="secondary"><i class="fa fa-external-link"></i></span>
   </label>
+  <ct-dialog class="{{ metricShortName.toLowerCase() }}Modal">
+    {{ metricShortName }}
+    {{ actual | shortenedNumber }}
+  </ct-dialog>
 </div>

@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { UgcBannerComponent } from './ugc-banner/ugc-banner.component';
 import { BubbleComponent } from './bubble/bubble.component';
 import { EngagementTableComponent } from './engagement-table/engagement-table.component';
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   moduleId: module.id,
   selector: 'client-dashboard-two-app',
   templateUrl: 'client-dashboard-two.component.html',
   styleUrls: ['client-dashboard-two.component.css'],
+  encapsulation: ViewEncapsulation.None,
   directives: [UgcBannerComponent, BubbleComponent, EngagementTableComponent]
 })
 export class ClientDashboardTwoAppComponent {

@@ -1,0 +1,186 @@
+.manage-brands-show {
+  display: flex;
+  flex-direction: column;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.manage-brands-show .brandBody {
+  margin-bottom: 70px;
+  padding: 0 100px;
+}
+
+.manage-brands-show .brandBanner .ugcPhoto {
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  min-height: 300px;
+}
+
+.manage-brands-show .brandBanner .ugcPhoto-brandInfo {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1 100%;
+  justify-content: center;
+}
+
+.manage-brands-show .brandBanner .ugcPhoto-caption {
+  align-self: flex-start;
+  margin: 50px 0 0;
+}
+
+.manage-brands-show .brandBanner .switchImage {
+  color: white;
+  cursor: pointer;
+  font-size: 60px;
+  opacity: 0.7;
+  padding: 20px;
+}
+
+.manage-brands-show .brandBanner h1 {
+  color: white;
+  font-size: 48px;
+  text-align: center;
+}
+
+.manage-brands-show .brandBody h1 {
+  text-align: center;
+}
+
+.manage-brands-show .brandBanner p {
+  color: white;
+  font-size: 16px;
+  text-align: left;
+}
+
+.manage-brands-show .dataBubbles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 50px;
+}
+
+.manage-brands-show .bubbleWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.manage-brands-show .bubbleWrapper label {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.manage-brands-show .bubble,
+.manage-brands-show .bubble-overlay {
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  font-size: 30px;
+  height: 150px;
+  justify-content: center;
+  width: 150px;
+}
+
+.manage-brands-show .bubble-overlay {
+  background-color: rgba(0, 0, 0, 0.30);
+  display: none;
+  flex-direction: column;
+}
+.manage-brands-show .bubble-overlay div {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.manage-brands-show .bubble--hoverable:hover .bubble-overlay {
+  display: flex;
+}
+
+.manage-brands-show .bubble--hoverable:hover .bubble-content {
+  display: none;
+}
+
+.manage-brands-show .bubble--engagements .bubble {
+  background-color: #ee5052;
+}
+
+.manage-brands-show .bubble--impressions .bubble {
+  background-color: #a15f89;
+}
+
+.manage-brands-show .bubble--riv .bubble {
+  background-color: #40b878;
+}
+
+.manage-brands-show .editStats {
+  margin: 50px;
+  text-align: center;
+}
+
+.manage-brands-show .toggleChildRows {
+  cursor: pointer;
+}
+
+/* ctTable Styles (temp) */
+table.ctTable {
+  background-color: var(--primary-background-color);
+  border-collapse: collapse;
+  border-radius: 4px;
+  font-weight: var(--fontWeight-base);
+  font-size: var(--fontSize-base);
+  width: 100%;
+}
+
+.ctTable tr {
+  border-bottom: 1px solid var(--divider-color);
+}
+
+.ctTable tr {
+  background-color: var(--tertiary-background-color);
+}
+
+.ctTable tr.highlight {
+  font-weight: var(--fontWeight-bold);
+  background-color: var(--primary-background-color);
+}
+
+.ctTable th {
+  background-color: var(--primary-background-color);
+  font-size: var(--fontSize-medium);
+  font-weight: var(--fontWeight-bold);
+}
+
+.ctTable th,
+.ctTable td {
+  color: var(--primary-text-color);
+  padding: 10px 20px;
+}
+
+.ctTable th.secondary,
+.ctTable td.secondary {
+  color: var(--secondary-text-color);
+}
+
+.ctTable th.tertiary,
+.ctTable td.tertiary {
+  color: var(--tertiary-text-color);
+}
+
+.ctTable th:first-of-type,
+.ctTable td:first-of-type {
+  text-align: left;
+}
+
+.ctTable th,
+.ctTable td {
+  text-align: center;
+}

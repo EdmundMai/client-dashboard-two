@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import './rxjs-operators';
 import { UgcBannerComponent } from './components/ugc-banner/index';
 import { BubbleComponent } from './components/bubble/index';
 import { EngagementTableComponent } from './components/engagement-table/index';

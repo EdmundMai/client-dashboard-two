@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BrowserDomAdapter } from '@angular/platform-browser/src/browser/browser_adapter'
-import { ShortenedNumber } from '../shortened-number.pipe';
+import { ShortenedNumber } from '../../pipes/shortened-number.pipe';
 
 @Component({
   moduleId: module.id,

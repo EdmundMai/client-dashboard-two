@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { UgcBannerComponent } from './ugc-banner/ugc-banner.component';
-import { BubbleComponent } from './bubble/bubble.component';
-import { EngagementTableComponent } from './engagement-table/engagement-table.component';
+import { UgcBannerComponent } from './components/ugc-banner/index';
+import { BubbleComponent } from './components/bubble/index';
+import { EngagementTableComponent } from './components/engagement-table/index';
 import { ViewEncapsulation } from '@angular/core';
 
 @Component({

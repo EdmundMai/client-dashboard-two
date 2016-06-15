@@ -2,7 +2,7 @@
   <ugc-banner></ugc-banner>
   <div class="brandBody">
     <h1>Your Crowd has been busy!</h1>
-    <div class="dataBubbles">
+    <div class="dataBubbles" *ngIf="!!fianceData">
       <bubble
         [actual]="fianceData.engagements_count"
         [forecast]="fianceData.engagements_forecast"

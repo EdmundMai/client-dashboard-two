@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import './rxjs-operators';
 import { UgcBannerComponent } from './components/ugc-banner/index';
 import { BubbleComponent } from './components/bubble/index';
 import { EngagementTableComponent } from './components/engagement-table/index';
 import { ViewEncapsulation } from '@angular/core';
+
+import { EngagementStatService } from './services/engagement-stat.service';
+import { EngagementStat } from "./models/engagement-stat";
 
 @Component({
   moduleId: module.id,
@@ -11,15 +14,23 @@ import { ViewEncapsulation } from '@angular/core';
   templateUrl: 'client-dashboard-two.component.html',
   styleUrls: ['client-dashboard-two.component.css'],
   encapsulation: ViewEncapsulation.None,
-  directives: [UgcBannerComponent, BubbleComponent, EngagementTableComponent]
+  directives: [UgcBannerComponent, BubbleComponent, EngagementTableComponent],
+  providers: [EngagementStatService]
 })
-export class ClientDashboardTwoAppComponent {
-  public fianceData = {
-    engagements_count: 517000,
-    engagements_forecast: 3000000,
-    potential_imps_count: 71000000,
-    potential_imps_forecast: 20000000000,
-    start_date: new Date(),
-    riv: 2.5
-  };
+export class ClientDashboardTwoAppComponent implements OnInit {
+  constructor(private _engagementStatService: EngagementStatService) {}
+
+  errorMessage: string;
+  public fianceData: EngagementStat;
+
+  ngOnInit() {
+    this.getEngagementStat();
+  }
+
+  getEngagementStat() {
+    this._engagementStatService.getEngagementStat()
+      .subscribe(
+        engagementStat => this.fianceData = engagementStat,
+        error =>  this.errorMessage = <any>error);
+  }
 }

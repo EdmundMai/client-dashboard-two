@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AccountService } from '../../services/account.service';
 import { Account } from "../../models/account";
+import { AccountStat } from "../../models/account-stat";
 
 @Component({
   moduleId: module.id,
@@ -10,7 +11,10 @@ import { Account } from "../../models/account";
   providers: [AccountService]
 })
 export class EngagementTableComponent implements OnInit {
+  // TO DO: convert this.fianceData into this.transformedFianceData
   constructor(private _accountService: AccountService) {}
+  @Input() fianceData: AccountStat[]
+;
 
   errorMessage: string;
   public accounts: Account[];

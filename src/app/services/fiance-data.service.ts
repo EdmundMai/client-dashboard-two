@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from "@angular/http";
 import { Observable } from 'rxjs/Observable';
-import { EngagementStat } from "../models/engagement-stat";
+import { FianceData } from "../models/fiance-data";
 
 @Injectable()
-export class EngagementStatService {
+export class FianceDataService {
   constructor (private http: Http) {}
 
-  private engagementStatUrl = '../app/services/engagement-stat.json';
+  private fianceDataUrl = '../app/services/fiance-data.json';
 
-  getEngagementStat (): Observable<EngagementStat> {
-    return this.http.get(this.engagementStatUrl)
+  getFianceData (): Observable<FianceData> {
+    return this.http.get(this.fianceDataUrl)
       .map(this.extractData)
       .catch(this.handleError);
   }
@@ -26,5 +26,4 @@ export class EngagementStatService {
     console.error(errMsg); // log to console instead
     return Observable.throw(errMsg);
   }
-
 }

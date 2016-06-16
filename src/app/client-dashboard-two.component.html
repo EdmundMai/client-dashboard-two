@@ -26,7 +26,7 @@
     </div>
     <div>
       <h3>Your activity at a glance</h3>
-      <engagement-table></engagement-table>
+      <engagement-table *ngIf="!!fianceData" [fianceData]="fianceData.accounts"></engagement-table>
     </div>
   </div>
 </div>

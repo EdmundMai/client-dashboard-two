@@ -4,9 +4,8 @@ import { UgcBannerComponent } from './components/ugc-banner/index';
 import { BubbleComponent } from './components/bubble/index';
 import { EngagementTableComponent } from './components/engagement-table/index';
 import { ViewEncapsulation } from '@angular/core';
-
-import { EngagementStatService } from './services/engagement-stat.service';
-import { EngagementStat } from "./models/engagement-stat";
+import { FianceDataService } from './services/fiance-data.service';
+import { FianceData } from "./models/fiance-data";
 
 @Component({
   moduleId: module.id,
@@ -15,22 +14,22 @@ import { EngagementStat } from "./models/engagement-stat";
   styleUrls: ['client-dashboard-two.component.css'],
   encapsulation: ViewEncapsulation.None,
   directives: [UgcBannerComponent, BubbleComponent, EngagementTableComponent],
-  providers: [EngagementStatService]
+  providers: [FianceDataService]
 })
 export class ClientDashboardTwoAppComponent implements OnInit {
-  constructor(private _engagementStatService: EngagementStatService) {}
+  constructor(private _fianceDataService: FianceDataService) {}
 
   errorMessage: string;
-  public fianceData: EngagementStat;
+  public fianceData: FianceData;
 
   ngOnInit() {
-    this.getEngagementStat();
+    this.getFianceData();
   }
 
-  getEngagementStat() {
-    this._engagementStatService.getEngagementStat()
+  getFianceData() {
+    this._fianceDataService.getFianceData()
       .subscribe(
-        engagementStat => this.fianceData = engagementStat,
+        fianceData => this.fianceData = fianceData,
         error =>  this.errorMessage = <any>error);
   }
 }
